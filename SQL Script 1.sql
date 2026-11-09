@@ -21,8 +21,28 @@ insert into "Top5Clubs" values
 
 select * from "Top5Clubs"
 
+-- change datatype
 alter table "User"
 alter column "phone" type bigint
+
+-- modifying table
+alter table "EuropeTeams"
+add team_name varchar(50)
+select * From "EuropeTeams"
+
+--update table
+update "EuropeTeams"
+SET team_name ='PSG'
+WHERE league_name = 'League 1';
+
+-- display conditional
+select * from "EuropeTeams"
+where team_name = 'Chelsea';
+
+-- delete record
+delete from "Top5Clubs"
+WHERE "name" = 'Bayern Munich';
+select * from "Top5Clubs"
 
 create table "User" (id int PRIMARY Key, First_Name varchar(50),Last_Name varchar(50),address varchar(50), DOB date, gender varchar(50), phone int);
 
